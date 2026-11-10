@@ -67,6 +67,16 @@
       color: var(--forest-dark);
       text-decoration: none;
       letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      mix-blend-mode: multiply;
     }
 
     nav a {
@@ -347,6 +357,15 @@
       border-radius: 20px;
     }
 
+    .store-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 2rem;
+    }
+
     /* フッター */
     footer {
       background: var(--forest-dark);
@@ -367,7 +386,7 @@
   <!-- ヘッダー -->
   <header>
     <div class="header-inner">
-      <a href="#" class="brand-logo">totone</a>
+      <a href="#" class="brand-logo"><img src="img/logo.png" alt="" class="brand-mark">totone</a>
       <nav>
         <a href="#about">About</a>
         <a href="#products">Products</a>
@@ -427,8 +446,7 @@
       <!-- 鳥の巣電子レンジ -->
       <div class="product-card">
         <div class="product-img-box">
-          <!-- 先ほど作成した画像をお持ちの場合は src="microwave.jpg" のように指定できます -->
-          <span style="color: #7D5D3B; font-weight: bold;">鳥の巣 電子レンジ</span>
+          <img src="img/microwave.png" alt="鳥の巣 電子レンジ" loading="lazy">
         </div>
         <div class="product-info">
           <h3 class="product-name">鳥の巣 電子レンジ</h3>
@@ -443,7 +461,7 @@
       <!-- 木の冷蔵庫 -->
       <div class="product-card">
         <div class="product-img-box">
-          <span style="color: #7D5D3B; font-weight: bold;">木の冷蔵庫</span>
+          <img src="img/fridge.png" alt="木の冷蔵庫" loading="lazy" style="object-position: center 40%;">
         </div>
         <div class="product-info">
           <h3 class="product-name">木の冷蔵庫</h3>
@@ -458,7 +476,7 @@
       <!-- 森のそよ風 エアコン -->
       <div class="product-card">
         <div class="product-img-box">
-          <span style="color: #7D5D3B; font-weight: bold;">森のそよ風 エアコン</span>
+          <img src="img/aircon.png" alt="森のそよ風 エアコン" loading="lazy">
         </div>
         <div class="product-info">
           <h3 class="product-name">森のそよ風 エアコン</h3>
@@ -473,7 +491,7 @@
       <!-- 深呼吸 空気清浄機 -->
       <div class="product-card">
         <div class="product-img-box">
-          <span style="color: #7D5D3B; font-weight: bold;">深呼吸 空気清浄機</span>
+          <img src="img/air-purifier.png" alt="深呼吸 空気清浄機" loading="lazy">
         </div>
         <div class="product-info">
           <h3 class="product-name">深呼吸 空気清浄機</h3>
@@ -536,6 +554,7 @@
   <!-- カフェ & ストア案内 -->
   <section id="cafe" class="section-store">
     <div class="store-box">
+      <img src="img/store.png" alt="体験型ショップ & カフェ「森のめぐみ」の店内" class="store-img" loading="lazy">
       <h2 style="color: var(--forest-dark); margin-bottom: 1rem;">体験型ショップ & カフェ「森のめぐみ」</h2>
       <p style="color: var(--text-sub); max-width: 600px; margin: 0 auto 1.5rem;">
         totoneの世界観を五感で体験できるテーマパークのようなコンセプトストア。<br>
