@@ -1,7 +1,7 @@
 import Image from "next/image";
 import storeImage from "@/assets/img/store.png";
 import logoAndIcon from "@/assets/img/logo_and_icon.svg";
-import logoType from "@/assets/img/logo-type.svg";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PricingSections } from "@/components/PricingSections";
 
@@ -113,15 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* フッター */}
-      <footer className="bg-forest-dark px-6 py-12 text-center text-[0.9rem] text-cream">
-        <Image
-          src={logoType}
-          alt="totone"
-          className="mx-auto mb-3 h-5 w-auto opacity-80 brightness-0 invert"
-        />
-        <p className="opacity-80">© {new Date().getFullYear()} totone All Rights Reserved. (Student Project)</p>
-      </footer>
+      <Footer />
     </>
   );
 }
