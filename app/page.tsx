@@ -1,5 +1,7 @@
 import Image from "next/image";
 import storeImage from "@/assets/img/store.png";
+import logoAndIcon from "@/assets/img/logo_and_icon.svg";
+import logoType from "@/assets/img/logo-type.svg";
 import { Header } from "@/components/Header";
 import { PricingSections } from "@/components/PricingSections";
 
@@ -25,6 +27,12 @@ export default function Home() {
 
       {/* ヒーロー */}
       <section className="bg-[radial-gradient(circle_at_center,#EFECE6_0%,var(--color-cream)_70%)] px-6 pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
+        <Image
+          src={logoAndIcon}
+          alt="totone"
+          className="mx-auto mb-6 h-auto w-36 sm:mb-8 sm:w-44"
+          priority
+        />
         <div className="mb-2 font-en text-[0.95rem] tracking-[2px] text-accent-green sm:text-[1.1rem]">
           LIFESTYLE WITH NATURE
         </div>
@@ -90,7 +98,11 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="bg-forest-dark px-6 py-12 text-center text-[0.9rem] text-cream">
-        <p className="mb-2 font-en text-[1.2rem] font-bold opacity-80">totone</p>
+        <Image
+          src={logoType}
+          alt="totone"
+          className="mx-auto mb-3 h-5 w-auto opacity-80 brightness-0 invert"
+        />
         <p className="opacity-80">© 2024 totone All Rights Reserved. (Student Project)</p>
       </footer>
     </>

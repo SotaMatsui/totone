@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import logo from "@/assets/img/logo.png";
+import icon from "@/assets/img/Icon.svg";
+import logoType from "@/assets/img/logo-type.svg";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -17,18 +18,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-100 border-b border-wood-light bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-3 md:px-8 md:py-4">
-        <a
-          href="#"
-          className="flex items-center gap-2 font-en text-[1.5rem] font-bold tracking-[1px] text-forest-dark md:text-[1.8rem]"
-        >
-          <Image
-            src={logo}
-            alt=""
-            width={40}
-            height={40}
-            className="size-8 rounded-full mix-blend-multiply md:size-10"
-          />
-          totone
+        <a href="#" className="flex items-center gap-2.5" aria-label="totone トップへ">
+          <Image src={icon} alt="" className="h-8 w-auto md:h-10" priority />
+          <Image src={logoType} alt="totone" className="h-[18px] w-auto md:h-[22px]" priority />
         </a>
 
         {/* PC: 横並びナビ */}
