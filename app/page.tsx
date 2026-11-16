@@ -26,7 +26,24 @@ export default function Home() {
       <Header />
 
       {/* ヒーロー */}
-      <section className="bg-[radial-gradient(circle_at_center,#EFECE6_0%,var(--color-cream)_70%)] px-6 pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
+      <section className="relative isolate overflow-hidden px-6 pt-14 pb-16 text-center sm:pt-20 sm:pb-24">
+        {/* 背景: ストア写真 + 文字を読みやすくするクリーム色のオーバーレイ */}
+        <Image
+          src={storeImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 scale-105 object-cover object-[20%_85%] blur-[2px] sm:object-[center_85%]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgb(250_248_245/0.92)_0%,rgb(250_248_245/0.8)_45%,rgb(250_248_245/0.55)_100%)]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-b from-transparent to-cream"
+        />
         <Image
           src={logoAndIcon}
           alt="totone"
