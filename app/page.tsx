@@ -24,25 +24,29 @@ export default function Home() {
       <Header />
 
       {/* ヒーロー */}
-      <section className="bg-[radial-gradient(circle_at_center,#EFECE6_0%,var(--color-cream)_70%)] px-6 pt-20 pb-16 text-center">
-        <div className="mb-2 font-en text-[1.1rem] tracking-[2px] text-accent-green">
+      <section className="bg-[radial-gradient(circle_at_center,#EFECE6_0%,var(--color-cream)_70%)] px-6 pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
+        <div className="mb-2 font-en text-[0.95rem] tracking-[2px] text-accent-green sm:text-[1.1rem]">
           LIFESTYLE WITH NATURE
         </div>
-        <h1 className="mb-6 text-[2.2rem] font-bold text-forest-dark">暮らしに、自然という心地よさを。</h1>
+        <h1 className="mb-6 text-[clamp(1.5rem,7vw,2.2rem)] leading-[1.5] font-bold text-forest-dark">
+          <span className="inline-block">暮らしに、</span>
+          <span className="inline-block">自然という心地よさを。</span>
+        </h1>
         <p className="mx-auto max-w-[600px] text-ink-sub">
           都会の喧騒に疲れた毎日に、そっと寄り添う森のぬくもり。
           <br />
-          木肌の手触り、鳥のさえずり、澄んだ風を届ける家電ブランド「totone（トトネ）」
+          木肌の手触り、鳥のさえずり、澄んだ風を届ける家電ブランド<span className="inline-block">「totone（トトネ）」</span>
         </p>
       </section>
 
       {/* About */}
       <section id="about" className="mx-auto my-16 max-w-[900px] px-6">
-        <div className="rounded-[20px] bg-white p-12 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
+        <div className="rounded-[20px] bg-white px-6 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.03)] sm:p-12">
           <h3 className="mb-4 text-center text-[1.17em] font-bold text-forest-dark">
-            「totone」に込めた3つの想い
+            <span className="inline-block">「totone」に込めた</span>
+            <span className="inline-block">3つの想い</span>
           </h3>
-          <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
+          <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] gap-8">
             {meanings.map((m) => (
               <div key={m.title} className="border-t-[3px] border-forest-mid pt-4">
                 <h4 className="mb-2 font-bold text-forest-dark">{m.title}</h4>
@@ -57,7 +61,7 @@ export default function Home() {
 
       {/* カフェ & ストア案内 */}
       <section id="cafe" className="mx-auto my-20 max-w-[900px] px-6 text-center">
-        <div className="rounded-[20px] bg-sand px-8 py-12">
+        <div className="rounded-[20px] bg-sand px-5 py-8 sm:px-8 sm:py-12">
           <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-[14px]">
             <Image
               src={storeImage}
@@ -67,14 +71,19 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <h2 className="mb-4 text-2xl font-bold text-forest-dark">体験型ショップ & カフェ「森のめぐみ」</h2>
+          <h2 className="mb-4 text-xl leading-normal font-bold text-forest-dark sm:text-2xl">
+            <span className="inline-block">体験型ショップ & カフェ</span>
+            <span className="inline-block">「森のめぐみ」</span>
+          </h2>
           <p className="mx-auto mb-6 max-w-[600px] text-ink-sub">
             totoneの世界観を五感で体験できるテーマパークのようなコンセプトストア。
             <br />
             店内では木のケトルで淹れたハーブティーをお楽しみいただけます。
           </p>
-          <span className="rounded-[30px] bg-forest-mid px-[1.8rem] py-[0.6rem] text-[0.9rem] text-white">
-            限定ノベルティ（木の鍋敷き・小鳥ぬいぐるみ）配布中
+          <span className="inline-block rounded-[30px] bg-forest-mid px-5 py-[0.6rem] text-[0.85rem] leading-relaxed text-white sm:px-[1.8rem] sm:text-[0.9rem]">
+            <span className="inline-block">限定ノベルティ</span>
+            <span className="inline-block">（木の鍋敷き・小鳥ぬいぐるみ）</span>
+            <span className="inline-block">配布中</span>
           </span>
         </div>
       </section>
