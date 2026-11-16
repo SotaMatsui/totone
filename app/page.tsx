@@ -120,7 +120,7 @@ export default function Home() {
           alt="totone"
           className="mx-auto mb-3 h-5 w-auto opacity-80 brightness-0 invert"
         />
-        <p className="opacity-80">© 2024 totone All Rights Reserved. (Student Project)</p>
+        <p className="opacity-80">© {new Date().getFullYear()} totone All Rights Reserved. (Student Project)</p>
       </footer>
     </>
   );
