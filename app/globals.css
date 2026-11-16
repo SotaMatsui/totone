@@ -26,3 +26,22 @@ html {
 body {
   @apply bg-cream text-ink font-ja leading-[1.8];
 }
+
+/* 商品詳細ポップアップ */
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ポップアップ表示中は背面をスクロールさせない */
+html:has(dialog[open]) {
+  overflow: hidden;
+}

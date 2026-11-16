@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { formatPrice, products, setPlans } from "./data";
+import { formatPrice, products, setPlans, type Product } from "./data";
+import { ProductDialog } from "./ProductDialog";
 
 export function PricingSections() {
   const [isStudent, setIsStudent] = useState(false);
+  const [selected, setSelected] = useState<Product | null>(null);
 
   return (
     <>
@@ -34,18 +36,24 @@ export function PricingSections() {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8 sm:gap-10">
           {products.map((product) => (
-            <div
+            <button
+              type="button"
               key={product.name}
-              className="flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-transform duration-300 hover:-translate-y-[5px]"
+              onClick={() => setSelected(product)}
+              aria-haspopup="dialog"
+              className="group flex cursor-pointer flex-col overflow-hidden rounded-[20px] bg-white text-left shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-transform duration-300 hover:-translate-y-[5px] focus-visible:ring-2 focus-visible:ring-accent-green focus-visible:outline-none"
             >
               <div className="relative flex h-60 w-full items-center justify-center overflow-hidden bg-placeholder">
+                <span className="absolute right-3 bottom-3 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-forest-dark opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                  詳しく見る
+                </span>
                 {product.image ? (
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 350px"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ objectPosition: product.imagePosition }}
                   />
                 ) : (
@@ -66,9 +74,11 @@ export function PricingSections() {
                   </span>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
+
+        <ProductDialog product={selected} isStudent={isStudent} onClose={() => setSelected(null)} />
       </section>
 
       {/* セット割 */}
