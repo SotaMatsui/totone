@@ -3,6 +3,7 @@ import airPurifier from "@/assets/img/air-purifier.png";
 import aircon from "@/assets/img/aircon.png";
 import fridge from "@/assets/img/fridge.png";
 import microwave from "@/assets/img/microwave.png";
+import mushroomLamp from "@/assets/img/mushroom-lamp.png";
 
 export type Product = {
   name: string;
@@ -55,6 +56,7 @@ export const products: Product[] = [
     description:
       "ぽわんと柔らかな光でベッドサイドを照らす、キノコ型のタッチセンサー調光ランプです。",
     price: 9800,
+    image: mushroomLamp,
   },
 ];
 
